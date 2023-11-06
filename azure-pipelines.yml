@@ -1,16 +1,5 @@
-pool:
-  name: Azure pipelines
-  demands:
-  - Agent.Name -equals Hosted Agent
-
-trigger:
-- '*'
-
-pr:
-- '*'
-
-jobs:
-- job: MyJob
-  steps:
-  - script: echo Hello, World!
-    displayName: 'Run a one-line script'
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo 'Hello world'
