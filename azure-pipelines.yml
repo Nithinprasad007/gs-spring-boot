@@ -1,5 +1,12 @@
-- task: Bash@3
+
+  pool:
+    name: Azure pipelines
+    demands:
+      - Agent.Name -equals Hosted Agent
+      
+- task: CmdLine@2
   inputs:
-    targetType: 'inline'
     script: |
-      echo 'Hello world'
+      echo Write your commands here
+      
+      echo Hello world
