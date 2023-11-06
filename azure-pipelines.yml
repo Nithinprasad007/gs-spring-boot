@@ -1,11 +1,16 @@
+pool:
+  name: Azure pipelines
+  demands:
+  - Agent.Name -equals Hosted Agent
+
 trigger:
 - '*'
 
-pool:
-  vmImage: 'Azure Pipelines'
+pr:
+- '*'
 
 jobs:
-- job: HelloWorld
+- job: MyJob
   steps:
-  - script: echo 'Hello, World!'
-    displayName: 'Print Hello World'
+  - script: echo Hello, World!
+    displayName: 'Run a one-line script'
